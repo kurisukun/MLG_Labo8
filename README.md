@@ -24,7 +24,7 @@ La solution proposée utilise un algorithme génétique. L'idée est de représe
 
 
 
-## 6.2
+## 6.2 Meilleur chemin 
 
 Après de nombreuses itérations, j'ai trouvé le chemin: `9 8 10 0 1 7 12 6 5 11 13 2 3 4` qui représente 2635.73 kilomètres.
 
@@ -32,11 +32,25 @@ Il ne nous est pas possible de déterminer si ce chemin est le plus optimal, car
 
 
 
-## 6.3
+## 6.3 Fonction de fitness
+
+Ma fonction de fitness est la suivante:
+
+```python
+def fitness(chromosome):
+    nb_dupl = len(set(chromosome))
+    score = 0.0
+    for i in range(0, len(chromosome)-1):
+        score += geopy.distance.distance((LAT[chromosome[i]], LON[chromosome[i]]), (LAT[chromosome[i+1]], LON[chromosome[i+1]])).km
+
+    if len(chromosome) != nb_dupl:
+        return - (score + 100000000000 * (len(chromosome) - nb_dupl))
+    return -score
+```
 
 
 
-
+Afin de vérifier que l'algo ne puisse pas retourner un chemin à distance nulle (répéter le même point indéfiniment) ou qu'il puisse passer par plusieurs fois la même ville, je vérifie qu'il n'y ait pas de répétitions dans le chromosome fourni en calculant le nombre de villes dupliquées. Si c'est le cas, je pénalise fortement le score en prenant en compte le nombre de répétitions, sinon calcule normalement le score en n'additionnant que les distances entre chaque coordonée.
 
 <div style="page-break-after: always; break-after: page;"></div>
 
