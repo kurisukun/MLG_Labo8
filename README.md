@@ -101,7 +101,9 @@ Afin de trouver tous ces paramètres, j'ai d'abord fixé la taille de la populat
 
 On peut voir que l'algorithme converge très rapidement vers la valeur de 3346.76. On pourrait se dire qu'on peut réduire le nombre d'itérations nécessaires mais après de nombreuses expériences, j'ai remarqué qu'en le réduisant, de temps en temps il ne parvient pas à cette valeur. Le nombre de 200 itérations est donc pour s'assurer que l'algorithme tombe plus facilement et souvent sur cette valeur. 
 
+![](img/plot2.png)
 
+En regardant plus attentivement ce graphique, on remarque que la différence entre le fitness maximum et le minimum n'est pas très grande et surtout qu'en moyenne, notre algorithme obtient des solutions proches des résultats bas.
 
 <div style="page-break-after: always; break-after: page;"></div>
 
