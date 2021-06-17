@@ -1,0 +1,5 @@
+docker-compose.yml
+Dockerfile
+Makefile
+requirements.txt
+*.pdf
