@@ -61,11 +61,13 @@ Finalement, je retourne le score qu'on essaie de minimiser.
 
 ## 6.4 Encodage de la solution
 
-Comme expliqué précédemment, j'ai utilisé l'indice des différentes coordonnées pour représenter les villes à parcourir, allant de la ville 0 à la ville 13. Le chromosome obtenu est alors un tableau contenant la liste, dans le bon ordre, des villes.
+Comme expliqué précédemment, j'ai utilisé l'indice des différentes coordonnées dans le tableau des latitudes et longitudes pour représenter les villes à parcourir, allant de la ville 0 à la ville 13. Le chromosome obtenu est alors un tableau contenant la liste, dans le bon ordre, des villes.
 
-Un exemple que l'on peut donner est: `0 1 2 3 4 5 6 7 8 9 10 11 12 13`.
+Un exemple que l'on peut donner est: `0 1 2 3 4 5 6 7 8 9 10 11 12 13` qui représente le chemin:
 
-Il peut être important de répréciser ici l'utilisation de la matrice `dist_matrix` qui contient l'ensemble des distances possiblement parcourables. Pour cela, la valeur à l'indice (i, j) représente quelle distance sépare la ville i de la ville j. Logiquement, pour tout i = j, on a alors une distance nulle qui apparaît. 
+$0 \rightarrow 1 \rightarrow 2 \rightarrow ... \rightarrow 12 \rightarrow 13 \rightarrow 0$
+
+Il peut être important de répréciser ici l'utilisation de la matrice `dist_matrix` qui contient l'ensemble des distances qui séparent mutuellement les villes les unes des autres. Pour cela, la valeur à l'indice (i, j) représente quelle distance sépare la ville i de la ville j. Logiquement, pour tout i = j, on a alors une distance nulle qui apparaît dans la matrice. 
 
 
 
@@ -115,7 +117,7 @@ En regardant plus attentivement ce graphique, on remarque que la différence ent
 
 En conclusion, on a pu voir que les algorithmes génétiques semblent être une méthode très appropriée afin de résoudre le problème du voyageur de commerce (ou en tout cas l'approximer), et ce faisant en un nombre assez réduit d'itérations. Ce qui a été le plus difficile, c'est de trouver la valeur de chacun des paramètres et de devoir effectuer un nombre assez conséquent de tests afin d'arriver à ces résultats.
 
-Malgré le fait qu'on ne connaît pas à l'avance la solution optimale, on peut tout de même penser dans notre cas que c'est bien l'une des solutions optimales. J'ai d'ailleurs discuté de ces résultats avec des collègues et nous avons remarqué avoir tous le même résultat. 
+Malgré le fait qu'on ne connaisse pas à l'avance la solution optimale, on peut tout de même penser dans notre cas que c'est bien l'une des solutions optimales. J'ai d'ailleurs discuté de ces résultats avec des collègues et nous avons remarqué avoir tous le même résultat. 
 
 
 
